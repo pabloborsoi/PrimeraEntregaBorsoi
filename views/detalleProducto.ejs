@@ -1,0 +1,44 @@
+<html>
+    <body>
+
+    
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+<header>
+
+    <%- include ("./partials/header.ejs")  %>
+    
+</header>
+          <h1><%=producto.id_producto%></h1>
+    <ul>
+        <!--VER, NO TOMA EL NOMBRE DE LA BASE DE DATO-->
+        <li>
+            marca: <%=producto.marca.nombre_marca%> 
+        </li>
+        <li>
+            talle: <%=producto.talle.nombre_talle%> 
+        </li>
+        <li>
+            categoria: <%=producto.categoria.nombre_categoria%> 
+        </li>
+        <li>
+            precio: <%=producto.precio%> 
+        </li>
+    </ul>
+    <a href="/product/productos/editar/<%=producto.id_producto%>">
+<button>Editar</button>
+</a>
+<form action="/productos/borrar/<%=producto.id%>" method="POST">
+    <button 
+    type="submit">Borrar</button>
+</form>
+<footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+
+</footer>
+</body>
+</html>

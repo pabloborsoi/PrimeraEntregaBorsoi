@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head')%>
+
+  <body>
+    <%- include ('./partials/header') %>
+
+    <main>
+      <Div class="form-container">
+        <div class="login-container">
+
+          <div class="errores">
+            <ul></ul>
+          </div>
+
+          <h2>INGRESA</h2>
+          <form action="/user/usuarios/loginSQL" method="post" class="formulete">
+            <% if (locals.mensajeError) { %>
+            <p class="error"><%= mensajeError %></p>
+            <% } %>
+            <p>
+              <input
+                type="text"
+                name="email"
+                placeholder="Ingresa tu correo acá"
+                id="correo"
+                class="correo"
+                value="<%= locals.oldData ? oldData.email : null %>"
+              />
+            </p>
+            <% if (locals.errors && errors.email) { %>
+            <p class="error"><%= errors.email.msg %></p>
+            <% } %>
+
+            <p>
+              <input
+                type="password"
+                name="password"
+                placeholder="Ingresa tu Contraseña"
+                id="clave"
+                class="password"
+              />
+            </p>
+            <% if (locals.errors && errors.password) { %>
+            <p class="error"><%= errors.password.msg %></p>
+            <% } %>
+            <input
+              type="checkbox"
+              class="recordarClave"
+              name="recordarClave"
+              id="recordarClave"
+            /><label for="recordarClave">Recordame</label>
+            <div class="buttons">
+              <button type="submit">Ingresar</button>
+            </div>
+          </form>
+        </div>
+      </Div>
+    </main>
+
+    <%- include ('./partials/footer') %>
+    <script src="/scripts/loginSQL.js"></script>
+  </body>
+</html>

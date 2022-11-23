@@ -1,0 +1,32 @@
+<div>   
+    <!-- Header TOP (Logo, Search-Bar, Text) -->
+    <section class="up-section">
+    <!-- Header TOP LOGO -->
+        <div class="up-section-img_Logo">
+            <img src="/images/logoDS22.jpeg" alt="Logo Digital Shirts">
+        </div>
+        <div class="bottom-container__top-right-menu">
+            <ul>
+                <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+                <% if (locals.isLogged) { %>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;">
+                            Hi <%= locals.userLogged.fullName %> 
+                            <li><a href="/product/json/create"><i class="fa-solid fa-pen-ruler"></i></a></li>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/user/json/profile">My profile</a>
+                            <li><hr class="dropdown-divider"></li>
+                            <a href="/user/json/logout">Logout</a>
+                        </ul>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item"><a class="nav-link" href="/user/json/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/user/json/register">Register</a></li>
+                <% } %>
+                <!-- <li><a href="/favorite"><i class="fa-solid fa-heart"></i></a></li> -->
+            </ul>
+        </div>
+    </section>
+</div>

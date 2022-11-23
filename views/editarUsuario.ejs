@@ -1,0 +1,56 @@
+<html>
+    <body>
+
+    
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+<header>
+
+    <%- include ("./partials/header.ejs")  %>
+    
+</header>
+<h1>Editar usuario</h1>
+<form acction="/user/usuarios/editar/<%=usuario.id%>" method="POST">
+    <div>
+        <label for="">Nombre Completo</label>
+        <input 
+        type="text" 
+        name="fullname" 
+        value="<%=usuario.fullname%>">
+    </div>
+    <div>
+        <label for="">Mail</label>
+        <input 
+        type="text" 
+        name="mail" 
+        value="<%=usuario.mail%>">
+    </div>
+    <div>
+        <label for="">Pais</label>
+        <input 
+        type="number" 
+        name="precio" 
+        value="<%=usuario.pais%>">
+    </div>
+    <div>
+        <label for="">Contraseña</label>
+        <input 
+        type="text" 
+        name="pass" 
+        value="<%=usuario.pass%>">
+    </div>
+    <!--FALTA AVATAR-->
+    <div>
+        <button type="submit">Editar</button>
+    </div>
+</form>
+<footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+
+</footer>
+</body>
+</html>

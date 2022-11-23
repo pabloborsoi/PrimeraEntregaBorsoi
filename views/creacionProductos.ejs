@@ -1,0 +1,86 @@
+<html>
+    <body>
+
+    
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+<header>
+
+    <%- include ("./partials/header.ejs")  %>
+    
+</header>
+
+<div class="errores">
+    <ul></ul>
+</div>
+
+<h1>Cargar camiseta</h1>
+
+<form acction="/product/productos/crear" method="POST">
+    <div>
+        <label for="">Nombre</label>
+        <input 
+        type="text" 
+        name="producto"
+        id="name">
+    </div>
+    <div>
+        <label for="">Marca</label>
+        <select 
+        name="marca">
+            <% for (let i = 0; i < marca.length; i ++) {%>
+                <!--imprime el id del nombre q nos interesa-->
+                <option value="<%=marca[i].id%>">
+                    <!--nombres de los datos en la base de dato-->
+                    <%=marca[i].nombre_marca%> 
+                </option>
+                <% } %>
+        </select> 
+    </div>
+    <div>
+        <label for="">Precio</label>
+        <input 
+        type="number" 
+        name="precio"
+        id="precio">
+    </div>
+    <div>
+        <label for="">Categoria</label>
+        <select 
+        name="categoria">
+            <% for (let i = 0; i < categoria.length; i ++) {%>
+                <!--imprime el id del nombre q nos interesa-->
+                <option value="<%=categoria[i].id%>">
+                    <!--nombres de los datos en la base de dato-->
+                    <%=categoria[i].nombre_categoria%> 
+                </option>
+                <% } %>
+        </select> 
+    </div>
+    <div>
+        <label for="">Talle</label>
+        <select 
+        name="talle">
+            <% for (let i = 0; i < talle.length; i ++) {%>
+                <!--imprime el id del nombre q nos interesa-->
+                <option value="<%=talle[i].id%>">
+                    <!--nombres de los datos en la base de dato-->
+                    <%=talle[i].nombre_talle%> 
+                </option>
+                <% } %>
+        </select> 
+    </div>
+    <button type="submit">Crear</button>
+</form>
+<footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+
+    <script src="/scripts/crearProductoSQL.js"></script>
+
+</footer>
+</body>
+</html>

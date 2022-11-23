@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <%- include ("./partials/head.ejs")  %>
+    
+    </head>
+
+<body>
+    <header>
+
+        <%- include ("./partials/header.ejs")  %>
+        
+    </header>
+    <h1>Detalle del usuario</h1>
+
+    <h2></h2>
+
+    <section>
+    
+        <a href="#">
+            <p>ID: <%= user.id %> </p>
+            <p>Nombre: <%= user.fullName %></p>
+            <p>Mail: <%= user.email %></p>
+            <p>Password: <%= user.password %></p>
+            <p>Pais: <%= user.country %></p>
+            <p>Avatar: <%= user.avatar %></p>
+        </a>
+    </section>
+
+    <form action="../edit/<%= user.id %>" method="get">
+        <button 
+        class="editar" 
+        type="submit">
+            Editar
+        </button>
+    </form>
+    <form action="../delete/<%= user.id %>?_method=delete" method="post">
+        <button 
+        class="eliminar" 
+        type="submit">Eliminar</button>
+    </form>
+    <footer class="footer">
+
+        <%- include ("./partials/footer.ejs")  %>
+
+    </footer>
+</body>
+
+</html>

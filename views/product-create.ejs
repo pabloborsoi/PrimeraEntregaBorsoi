@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+<body>
+    <header>
+
+    <%- include ("./partials/header.ejs")  %>
+      
+    </header>
+    <main>
+        
+                    <h2>Cargar un Escritor</h2>
+               
+        <section>
+<!--Front-End-Errores-->	
+<div class="errores">
+    <ul></ul>
+</div>
+            <div class="carga">
+                            <form action="/product/json/create" method="POST" enctype="multipart/form-data">
+
+						<!--Esta parte es la llamada a los errores-->
+						<% if (locals.mensajeError) { %>
+							<p class="error"><%= mensajeError %></p>
+							<% } %>
+                            
+                                <div class="form-group">
+                                    <label><b>Nombre del Escritor:</b></label>
+                                    <input 
+                                    type="text" 
+                                    name="nombre"
+                                    id= "name"
+                                    value="<%= locals.oldData ? oldData.nombre: null %>">
+                                    <% if (locals.errors && errors.nombre) { %>
+                                        <p class="error"><%= errors.nombre.msg %></p>
+                                    <% } %>
+                                </div>	
+
+                                <div class="form-group">
+                                    <label><b>Descripcion:</b></label>
+                                    <input 
+                                    type="text" 
+                                    name="descripcion"
+                                    id = "descripcion">
+                                    <% if (locals.errors && errors.descripcion) { %>
+                                        <p class="error"><%= errors.descripcion.msg %></p>
+                                    <% } %>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><b>Precio por ensayo:</b></label>
+                                    <input 
+                                    type="number" 
+                                    name="precio"
+                                    id="precio">
+                                    <% if (locals.errors && errors.precio) { %>
+                                        <p class="error"><%= errors.precio.msg %></p>
+                                    <% } %>
+                                </div>
+
+                                <!--Aquí solicito la imagen-->
+                                <div class="form-control">
+                                    <label><b>Avatar del escritor:</b></label>
+                                    <input 
+                                    type="file"
+                                    name="imagen"
+                                    id="imagen">
+                                    <% if (locals.errors && errors.imagen) { %>
+                                        <p class="error"><%= errors.imagen.msg %></p>
+                                    <% } %>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit"> Guardar </button>
+                                    <button><a href="/"> Volver </a></button>
+                                </div>
+                                
+                            </form>
+                    
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+
+    </footer>
+    <script src="/scripts/crearProducto.js"></script>
+</body>
+</html>

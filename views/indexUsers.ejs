@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <%- include ("./partials/head.ejs")  %>
+    
+    </head>
+
+<body>
+    <header>
+
+        <%- include ("./partials/header.ejs")  %>
+        
+    </header>
+    <h1>INICIO</h1>
+
+    <h2>Usuarios registrados</h2>
+
+    <section>
+        <% for( let i = 0; i < users.length; i++ ) { %>
+            <a href="/user/json/detail/<%= users[i].id %> ">
+                <p>ID: <%= users[i].id %> </p>
+                <p>Nombre: <%= users[i].fullName %></p>
+                <p>Mail: <%= users[i].email %></p>
+                <p>Password: <%= users[i].password %></p>
+                <p>Pais: <%= users[i].country %></p>
+                <p>Avatar: <%= users[i].avatar %></p>
+            </a>
+        <% } %>
+    
+    </section>
+
+    <!-- <a href="/users/register">Nuevo Usuario</a> -->
+
+    <form action="/user/json/register" method="get">
+        <button type="submit">
+            Nuevo Usuario
+        </button>
+    </form>
+    <footer class="footer">
+
+        <%- include ("./partials/footer.ejs")  %>
+
+    </footer>
+</body>
+
+</html>

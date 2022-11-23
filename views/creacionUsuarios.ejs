@@ -1,0 +1,73 @@
+<html>
+    <body>
+
+    
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+<header>
+
+    <%- include ("./partials/header.ejs")  %>
+    
+</header>
+
+<div class="errores">
+    <ul></ul>
+</div>
+
+<h1>Crear Usuario</h1>
+
+<form acction="/user/usuarios/crear" method="POST">
+    <div>
+        <label for="">Nombre Completo</label>
+        <input 
+        type="text" 
+        name="fullname"
+        id="nombre">
+    </div>
+    <div>
+        <label for="">Mail</label>
+        <input 
+        type="text" 
+        name="mail"
+        id="correo">
+    </div>
+    <div>
+        <label for="">Pais</label>
+        <select 
+        type="text" 
+        name="pais"
+        id="country">
+        <option value="">Elegí un país</option>
+									<%  
+										let countries = ['Argentina', 'Bolivia', 'Brasil', 'Colombia', 'Chile', 'Ecuador', 'Paraguay', 'Perú', 'Uruguay', 'Venezuela'];
+									%>
+									<% for (const oneCountry of countries) { %>
+										<option 
+											value="<%= oneCountry %>"
+											<%= locals.oldData && (oneCountry === oldData.country) ? 'selected' : null %> 
+										> <%= oneCountry %> </option>
+									<% } %>
+        </select>
+    </div>
+    <div>
+        <label for="">Contraseña</label>
+        <input 
+        type="text" 
+        name="pass"
+        id="clave">
+    </div>
+    <!--VER AVATAR-->
+    <button type="submit">Regristrame</button>
+</form>
+<footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+    
+    <script src="/scripts/registroSQL.js"></script>
+
+</footer>
+</body>
+</html>

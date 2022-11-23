@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+    <%- include('./partials/head') %>
+        <body>
+    <header>
+
+    <%- include ("./partials/header.ejs")  %>
+      
+    </header>
+    <main class="container-fluid">
+    
+                <div>
+                    <h2>Actualizar un Producto</h2>
+                </div>
+    <section>
+<div class="errores">
+    <ul></ul>
+</div>
+                    <div class="create-form">
+                            <form action="/product/json/edit/<%= camisetaEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
+                               
+                                <% if (locals.mensajeError) { %>
+                                    <p class="error"><%= mensajeError %></p>
+                                    <% } %>
+
+                                <div class="form-group">
+                                    <label><b>Nombre de Camiseta:</b></label>
+                                    <input 
+                                    type="text"  
+                                    id="name"
+                                    name="nombre" 
+                                    placeholder="Nombre" 
+                                    value= "<%= locals.errors && errors.nombre ? 'is-invalid' : null %>">
+                                    <% if (locals.errors && errors.nombre) { %>
+                                        <p class="error"><%= errors.nombre.msg %></p>
+                                    <% } %>
+                                </div>	
+
+                                <div class="form-group">
+                                    <label><b>Descripcion del Producto:</b></label>
+                                    <input 
+                                    type="text" 
+                                    name="descripcion"
+                                    id ="descripcion"  
+                                    placeholder="Descripción" 
+                                    value= "<%= locals.errors && errors.descripcion ? 'is-invalid' : null %>">
+                                    <% if (locals.errors && errors.descripcion) { %>
+                                        <p class="error"><%= errors.descripcion.msg %></p>
+                                    <% } %>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><b>Precio:</b></label>
+                                    <input 
+                                    type="number" 
+                                    name="precio" 
+                                    id="precio"
+                                    placeholder="Indique el precio" 
+                                    value= "<%= locals.errors && errors.precio ? 'is-invalid' : null %>"> 
+                                    <% if (locals.errors && errors.precio) { %>
+                                        <p class="error"><%= errors.precio.msg %></p>
+                                    <% } %>                                  
+                                </div>
+
+                                <!--Aquí solicito la imagen-->
+                                <div class="custom-file">
+                                    <label><b> Foto: </b></label>
+                                    <input type="hidden"  name="oldImagen"  value="<%= camisetaEditar.imagen%>">
+                                    <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
+                                    <input type="file" name="imagen" id="imagen">
+                                    <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=""> 
+    
+                                    <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
+                                    <img  
+                                    class="form-control <%= locals.errors && errors.imagen ? 'is-invalid' : null %>" >
+                                    <% if (locals.errors && errors.imagen) { %>
+                                    <div class="error">
+                                    <%= errors.imagen.msg %> 
+                                    </div>
+                                    <% } %>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit"> Actualizar </button>
+                                    <button><a href="/"> Volver </a></button>
+                                </div>
+                                
+                            </form>
+                    </div>                        
+    </section>              
+    </main>      
+                <footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+          
+                </footer>
+                <script src="/scripts/editarProducto.js"></script>
+        </body>
+        </html>

@@ -1,0 +1,42 @@
+[
+ {
+  "id": 1,
+  "fullName": "Javi Herrera",
+  "email": "javi@dh.com",
+  "password": "$2a$10$kbHNepDXku1qKDytFK3RpuLtkW/dqMGDi4jXL7lNQUF8lm1HZ2.N.",
+  "country": "Colombia",
+  "avatar": "1609285636788_img.jpg"
+ },
+ {
+  "id": 2,
+  "fullName": "Pablo Borsoi",
+  "email": "pablodborsoi@gmail.com",
+  "password": "$2a$10$EAS0iXgVmcPCUhYZ.tMmrOktuccA77G8R7jBiRJPVK0FUbeMNqHx.",
+  "country": "Argentina",
+  "avatar": "1658878966195_img.png"
+ },
+ {
+  "id": 3,
+  "fullName": "Claudio",
+  "email": "nnn@gmail.com",
+  "password": "$2a$10$4QvbLZuZVE1WICXmxVFgKO.yvZAsVmH6SamfwZ7nMvf/AwF8svzP.",
+  "country": "Argentina",
+  "avatar": "1669115474905_img.jpg"
+ },
+ {
+  "id": 4,
+  "fullName": "Marcia Perez",
+  "email": "marcia@gmail.com",
+  "password": "$2a$10$VXFpv8iet5.rrg/HVCvigeztwauz8U0PnQFR/IeJTOx7YTWteWdq2",
+  "country": "Argentina",
+  "avatar": "1669244026380_img.jpg"
+ },
+ {
+  "id": 5,
+  "fullName": "Walter",
+  "email": "Perez@gmail.com",
+  "password": "$2a$10$RA.BT5frK0qCvvXRbdsH2u9POwL4kS/T21gAnKXOqrNB5DU1cyg6a",
+  "country": "Brasil",
+  "avatar": "1669247150193_img.jpg"
+ }
+]

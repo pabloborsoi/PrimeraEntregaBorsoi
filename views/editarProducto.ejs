@@ -1,0 +1,98 @@
+<html>
+    <body>
+
+    
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+<header>
+
+    <%- include ("./partials/header.ejs")  %>
+    
+</header>
+
+<div class="errores">
+    <ul></ul>
+</div>
+
+<h1>Editar producto</h1>
+<form acction="/product/productos/editar/<%=producto.id%>" method="POST">
+    
+    <!--<div>
+        <label for="">Producto</label>
+        <input 
+        type="text" 
+        name="producto"
+        value="<%=producto.id_producto%>">
+    </div>-->
+   
+    <div>
+        <label for="">Marca</label>
+            <select name="marca"
+            id="marca">
+                <% for (let i = 0; i < marca.length; i ++) {%>
+                    <!--imprime el id del nombre q nos interesa-->
+                    <option value="<%=marca[i].id%>">
+                        <!--nombres de los datos en la base de dato-->
+                        <%=marca[i].nombre_marca%> 
+                    </option>
+                    <% } %>
+            </select> 
+    </div>
+
+    <div>
+        <label for="">Talle</label>
+        <select
+        name="talle"
+        id="talle">
+            <% for (let i = 0; i < talle.length; i ++) {%>
+                <!--imprime el id del nombre q nos interesa-->
+                <option value="<%=talle[i].id%>">
+                    <!--nombres de los datos en la base de dato-->
+                    <%=talle[i].nombre_talle%> 
+                </option>
+                <% } %>
+        </select>
+    </div>
+    
+    <div>
+        <label for="">Categoria</label>
+        <select
+        name="categoria"
+        id="categoria">
+            <% for (let i = 0; i < categoria.length; i ++) {%>
+                <!--imprime el id del nombre q nos interesa-->
+                <option value="<%=categoria[i].id%>">
+                    <!--nombres de los datos en la base de dato-->
+                    <%=categoria[i].nombre_categoria%> 
+                </option>
+                <% } %>
+        </select>
+    </div>
+
+    <div>
+        <label for="">Precio</label>
+        <input 
+        type="number" 
+        name="precio"
+        id="precio" 
+        value="<%=producto.precio%>">
+    </div>
+
+    <div>
+        <button type="submit">Editar</button>
+    </div>
+
+</form>
+
+<footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+
+    <script src="/scripts/editarProductoSQL.js"></script>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+
+<body>
+    <header>
+
+        <%- include ("./partials/header.ejs")  %>
+        
+    </header>
+    
+    <!-- <section class="nav-banner">
+        <img id="banner-img" src="../images/travel-nomades-JO19K0HDDXI-unsplash.jpg" alt="Banner de Futbol">
+    </section> -->
+    <script src="/database/camisetas.json"></script>
+    <main>
+        <!--Section Destacados--> 
+        <h2>Nosotros</h2>
+        <section class="seccion_main">
+            <!--Section Item-->
+
+       <div class="articulo">
+          <% for(let i= 0; i < camisetas.length; i++){ %>
+            
+              <article class="">
+                <figure>
+                  <img src="images/camisetas/<%= camisetas[i].imagen%>" class="product-item_img"  alt="camiseta">
+                </figure>
+                <section class="product-info">
+                  <h5 class="card-title"><%= camisetas[i].nombre%></h5>
+                  <p class="card-text descripcion"><%= camisetas[i].descripcion%> </p>
+                  <h5 class="card-title">$<%= camisetas[i].precio%> </h5>
+                  <a href="/product/json/detail/<%= camisetas[i].id %>" class="btn btn-primary">Ver detalle</a>
+                </section>  
+              </article>        
+            
+          <% } %>
+        </div>
+           
+          <!--  <div class="articulo">
+                <img class="product-item_img" src="images/arsenal21-22.jpg" alt="Camiseta del Arsenal de Inglaterra">
+                <div class="product-info">
+                    <p class="info-price">$1.200</p>
+                    <p class="info-discount">25% OFF</p>
+                    <h3><b>Camiseta del Arsenal de Inglaterra</b></h3>
+                </div>
+            </div>
+-->
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <%- include ("./partials/footer.ejs")  %>
+
+    </footer>
+    
+</body>
+</html>

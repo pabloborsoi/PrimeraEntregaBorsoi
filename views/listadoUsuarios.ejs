@@ -1,0 +1,31 @@
+<html>
+    <body>
+
+    
+<head>
+
+    <%- include ("./partials/head.ejs")  %>
+
+</head>
+<header>
+
+    <%- include ("./partials/header.ejs")  %>
+    
+</header>
+<h1>Listado de usuarios</h1>
+<ul>
+    <% for (let i = 0; i < usuarios.length; i++)  {%> 
+        <li>
+            <a href="/user/usuarios/<%=usuarios[i].id_usuario%>">
+            <%=usuarios[i].fullname%> 
+        </a>
+        </li>
+        <% } %> 
+</ul> 
+<footer class="footer">
+
+    <%- include ("./partials/footer.ejs")  %>
+
+</footer>
+</body>
+</html>

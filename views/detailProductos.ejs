@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <%- include ("./partials/head.ejs")  %>
+    
+    </head>
+
+<body>
+    <header>
+
+        <%- include ("./partials/header.ejs")  %>
+        
+    </header>
+    <h1>Detalle del producto</h1>
+
+    <h2></h2>
+
+    <section>
+    
+        <a href="#">
+            <p>nombre: <%= camiseta.nombre %></p>
+            <p>descripcion: <%= camiseta.descripcion %></p>
+            <p>precio: <%= camiseta.precio %></p>
+            <p>imagen: <%= camiseta.imagen %></p>
+        </a>
+    </section>
+
+    <form action="../edit/<%= camiseta.id %>" method="get">
+        <button class="editar" type="submit">
+            Editar
+        </button>
+    </form>
+    <form action="../delete/<%= camiseta.id %>?_method=delete" method="post">
+        <button class="eliminar" type="submit">
+            Eliminar
+        </button>
+    </form>
+    <footer class="footer">
+
+        <%- include ("./partials/footer.ejs")  %>
+
+    </footer>
+</body>
+
+</html>

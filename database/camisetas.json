@@ -1,0 +1,44 @@
+[
+  {
+    "id": "51111",
+    "nombre": "Carlos",
+    "descripcion": "Gonzalez",
+    "precio": "100",
+    "imagen": "camiseta-1662204004609.jpeg"
+  },
+  {
+    "id": "511111",
+    "nombre": "Carla",
+    "descripcion": "Gomez",
+    "precio": "105",
+    "imagen": "camiseta-1662204093254.jpeg"
+  },
+  {
+    "nombre": "Lucas",
+    "descripcion": "Rodriguez",
+    "precio": "101",
+    "id": "5111111",
+    "imagen": "camiseta-1662993522846.jpg"
+  },
+  {
+    "id": "51111111",
+    "nombre": "Felicitas",
+    "descripcion": "felicitasfelicitasfelicitas",
+    "precio": "200",
+    "imagen": "camiseta-1669244159725.jpg"
+  },
+  {
+    "id": "511111111",
+    "nombre": "Roque",
+    "descripcion": "PerezPerezPerezPerez",
+    "precio": "1000",
+    "imagen": "camiseta-1669246789306.jpg"
+  },
+  {
+    "id": "5111111111",
+    "nombre": "Fulano",
+    "descripcion": "FulanoFulanoFulanoFulano",
+    "precio": "500",
+    "imagen": "camiseta-1669247240617.jpg"
+  }
+]

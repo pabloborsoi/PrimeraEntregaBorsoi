@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <%- include ("./partials/head.ejs")  %>
+    
+    </head>
+
+<body>
+    <header>
+
+        <%- include ("./partials/header.ejs")  %>
+        
+    </header>
+    <h1>Editando al usuario...</h1>
+
+    <h2>Completar datos</h2>
+
+
+    <form class="register" action="/user/json/edit/<%= user.id %>?_method=put" method="post">
+
+        <label for="fullName">Nombre:</label>
+        <input 
+        type="text" 
+        name="fullName" 
+        id="fullName" 
+        value="<%= user.fullName %>">
+
+        <label for="email">Mail:</label>
+        <input 
+        type="text" 
+        name="email" 
+        id="email" 
+        value="<%= user.email %>">
+
+       <!-- <label for="password">Password:</label>
+        <input 
+        type="text" 
+        name="password" 
+        id="password" 
+        value="<%= user.password %>">
+-->
+        
+        <label for="country">Pais:</label>
+        <input 
+        type="text" 
+        name="country" 
+        id="country" 
+        value="<%= user.country %>">
+
+        
+        <label for="avatar">Avatar:</label>
+        <input 
+        type="text" 
+        name="avatar" 
+        id="avatar" 
+        value="<%= user.avatar %>">
+
+        <button type="submit">Guardar</button>
+    </form>
+    
+    <footer class="footer">
+
+        <%- include ("./partials/footer.ejs")  %>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head'); %>
+<body>
+	<header>
+		
+		<%- include ("./partials/header.ejs")  %>
+	</header>
+	<!--Front-End-Errores-->	
+	<!-- Login-Form -->
+
+	<div class="errores">
+		<ul></ul>
+	</div>
+	
+	<div class="carga">
+		<section class="login-title">
+			<h2>Formulario de Login</h2>
+		</section>
+		<form method="POST" action="/user/json/login" class="login">
+			<!--Esta parte es la llamada a los errores-->
+			<% if (locals.mensajeError) { %>
+				<p class="error"><%= mensajeError %></p>
+				<% } %>
+				<!--form-group y login-data-->
+				<p>
+					<label><b>Correo electrónico:</b></label>
+					<input 
+					type="text" 
+								name="email"
+								placeholder="Ingresa tu correo acá"
+								id="correo" 
+								class="correo"
+								value="<%= locals.oldData ? oldData.email : null %>"
+                                >
+                            </p>
+                                <% if (locals.errors && errors.email) { %>
+                                <p class="error"><%= errors.email.msg %></p>
+                                <% } %>
+
+						    <p>
+								<label><b>Password:</b></label>
+								<input 
+								type="password" 
+								name="password"
+								placeholder="Ingresa tu Contraseña" 
+								id="clave"
+								class="password"
+								/>
+							</p>
+							<% if (locals.errors && errors.password) { %>
+								<p class="error"><%= errors.password.msg %></p>
+								<% } %>
+						
+								<input 
+								type="checkbox" 
+								class="recordarClave" 
+								name="recordarClave"
+								id="recordarClave"
+								/><label for="recordarClave">Recordame</label>
+						
+						<div class="buttons">
+							<button type="submit">Loguearme</button>
+						</div>
+					
+				</form>
+	</div>			
+	<!-- //Login-Form -->
+	
+	<footer class="footer">
+
+        <%- include ("./partials/footer.ejs")  %>
+
+	</footer>
+	<script src="/scripts/login.js"></script>
+</body>
+</html>
